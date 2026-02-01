@@ -5,6 +5,8 @@ COPY build_files /
 # Base Image
 FROM ghcr.io/ublue-os/silverblue-main:latest
 
+RUN rm /opt && mkdir /opt
+
 # Copy Homebrew files from the brew image
 # And enable
 COPY --from=ghcr.io/ublue-os/brew:latest /system_files /
