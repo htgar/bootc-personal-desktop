@@ -28,8 +28,6 @@ dnf5 install -y brave-browser
 dnf5 copr enable -y alternateved/keyd
 dnf5 install -y keyd
 
-mkdir /etc/keyd
-
 tee /etc/keyd/default.conf <<'EOF'
 [ids]
 
