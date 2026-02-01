@@ -25,7 +25,7 @@ dnf5 config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3
 dnf5 install -y brave-browser
 
 # Key Remapping
-dnf5 copr enable alternateved/keyd
+dnf5 copr enable -y alternateved/keyd
 dnf5 install -y keyd
 
 mkdir /etc/keyd
