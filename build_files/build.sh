@@ -12,7 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 
 # Remove apps that I don't need
-dnf5 uninstall -y tmux htop nvtop dconf-editor
+dnf5 remove -y tmux htop nvtop dconf-editor
 
 # Tailscale
 dnf5 config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
@@ -20,7 +20,7 @@ dnf5 install -y tailscale
 systemctl enable tailscaled
 
 # Brave
-dnf5 uninstall -y firefox firefox-langpacks
+dnf5 remove -y firefox firefox-langpacks
 dnf5 config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 dnf5 install -y brave-browser
 
