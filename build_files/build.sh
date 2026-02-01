@@ -11,9 +11,38 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 
+# Remove apps that I don't need
+dnf5 uninstall -y tmux htop nvtop dconf-editor
+
+# Tailscale
 dnf5 config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
 dnf5 install -y tailscale
 systemctl enable tailscaled
+
+# Brave
+dnf5 uninstall -y firefox firefox-langpacks
+dnf5 config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+dnf5 install -y brave-browser
+
+# Key Remapping
+dnf5 copr enable alternateved/keyd
+dnf5 install keyd
+
+mkdir /etc/keyd
+
+tee /etc/keyd/default.conf <<'EOF'
+[ids]
+
+*
+
+[main]
+
+# Maps capslock to escape when pressed and control when held.
+capslock = overload(control, esc)
+
+# Remaps the escape key to capslock
+esc = capslock
+EOF
 
 # Use a COPR Example:
 #
@@ -25,3 +54,6 @@ systemctl enable tailscaled
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+# GNOME Settings
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
