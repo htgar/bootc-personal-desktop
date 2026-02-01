@@ -26,7 +26,7 @@ dnf5 install -y brave-browser
 
 # Key Remapping
 dnf5 copr enable alternateved/keyd
-dnf5 install keyd
+dnf5 install -y keyd
 
 mkdir /etc/keyd
 
