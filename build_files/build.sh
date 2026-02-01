@@ -46,8 +46,6 @@ capslock = overload(control, esc)
 esc = capslock
 EOF
 
-keyd reload
-
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
