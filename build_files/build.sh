@@ -27,6 +27,7 @@ dnf5 install -y brave-browser
 # Key Remapping
 dnf5 copr enable -y alternateved/keyd
 dnf5 install -y keyd
+systemctl enable keyd
 
 tee /etc/keyd/default.conf <<'EOF'
 [ids]
@@ -42,6 +43,8 @@ capslock = overload(control, esc)
 esc = capslock
 EOF
 
+keyd reload
+
 # Use a COPR Example:
 #
 # dnf5 -y copr enable ublue-os/staging
@@ -52,6 +55,3 @@ EOF
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-
-# GNOME Settings
-gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
