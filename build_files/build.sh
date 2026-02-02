@@ -12,7 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 
 # Add some apps
-dnf5 install -y adw-gtk3-theme
+dnf5 install -y adw-gtk3-theme docker
 
 # Remove apps that I don't need
 dnf5 remove -y tmux htop nvtop dconf-editor gnome-software gnome-software-rpm-ostree gnome-terminal-nautilus
