@@ -12,6 +12,7 @@ set -ouex pipefail
 # this installs a package from fedora repos
 
 # Add some apps
+dnf5 group install -y development-tools
 dnf5 install -y adw-gtk3-theme docker
 
 # Remove apps that I don't need
