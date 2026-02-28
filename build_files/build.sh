@@ -13,15 +13,15 @@ set -ouex pipefail
 
 # Add some apps
 dnf5 group install -y development-tools
-dnf5 install -y adw-gtk3-theme docker
+dnf5 install -y adw-gtk3-theme
 
 # Remove apps that I don't need
 dnf5 remove -y tmux htop nvtop dconf-editor gnome-software gnome-software-rpm-ostree gnome-terminal-nautilus
 
 # Tailscale
-dnf5 config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
-dnf5 install -y tailscale
-systemctl enable tailscaled
+# dnf5 config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+# dnf5 install -y tailscale
+# systemctl enable tailscaled
 
 # Brave
 dnf5 remove -y firefox firefox-langpacks
