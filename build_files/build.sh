@@ -13,7 +13,7 @@ set -ouex pipefail
 
 # Add some apps
 dnf5 group install -y development-tools
-dnf5 install -y adw-gtk3-theme podman-compose docker
+dnf5 install -y adw-gtk3-theme podman-compose docker docker-compose
 
 # Remove apps that I don't need
 dnf5 remove -y tmux htop nvtop dconf-editor gnome-software gnome-software-rpm-ostree gnome-terminal-nautilus
@@ -27,6 +27,10 @@ systemctl enable tailscaled
 dnf5 remove -y firefox firefox-langpacks
 dnf5 config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 dnf5 install -y brave-browser
+
+# Ghostty
+dnf5 copr enable scottames/ghostty
+dnf5 install ghostty
 
 # Key Remapping
 dnf5 copr enable -y alternateved/keyd
