@@ -29,7 +29,7 @@ dnf5 config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3
 dnf5 install -y brave-browser
 
 # Ghostty
-dnf5 copr enable scottames/ghostty
+dnf5 copr enable -y scottames/ghostty
 dnf5 install -y ghostty
 
 # Key Remapping
