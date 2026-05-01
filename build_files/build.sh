@@ -30,7 +30,7 @@ dnf5 install -y brave-browser
 
 # Ghostty
 dnf5 copr enable scottames/ghostty
-dnf5 install ghostty
+dnf5 install -y ghostty
 
 # Key Remapping
 dnf5 copr enable -y alternateved/keyd
