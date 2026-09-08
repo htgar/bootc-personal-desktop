@@ -13,6 +13,7 @@ set -ouex pipefail
 
 # Add some apps
 dnf5 group install -y development-tools
+dnf5 group install -y c-development
 dnf5 install -y adw-gtk3-theme podman-compose docker docker-compose
 
 # Remove apps that I don't need
@@ -33,8 +34,8 @@ dnf5 copr enable -y scottames/ghostty
 dnf5 install -y ghostty
 
 # Global Connect
-dnf5 copr enable yuezk/globalprotect-openconnect
-dnf5 install globalprotect-openconnect
+dnf5 copr enable -y yuezk/globalprotect-openconnect
+dnf5 install -y globalprotect-openconnect
 
 # Key Remapping
 dnf5 copr enable -y alternateved/keyd
