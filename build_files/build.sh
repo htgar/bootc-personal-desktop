@@ -32,6 +32,10 @@ dnf5 install -y brave-browser
 dnf5 copr enable -y scottames/ghostty
 dnf5 install -y ghostty
 
+# Global Connect
+dnf5 copr enable yuezk/globalprotect-openconnect
+dnf5 install globalprotect-openconnect
+
 # Key Remapping
 dnf5 copr enable -y alternateved/keyd
 dnf5 install -y keyd
