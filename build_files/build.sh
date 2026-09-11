@@ -17,7 +17,7 @@ dnf5 group install -y c-development
 dnf5 install -y adw-gtk3-theme podman-compose
 
 # OpenGL dev
-sudo dnf5 install -y mesa-libGL-devel mesa-libGLU-devel libXrandr-devel libXinerama-devel
+sudo dnf5 install -y mesa-libGL-devel mesa-libGLU-devel libXrandr-devel libXinerama-devel libXcursor-devel
 
 # Remove apps that I don't need
 dnf5 remove -y tmux htop nvtop dconf-editor gnome-software gnome-software-rpm-ostree gnome-terminal-nautilus
