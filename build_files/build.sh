@@ -14,7 +14,7 @@ set -ouex pipefail
 # Add some apps
 dnf5 group install -y development-tools
 dnf5 group install -y c-development
-dnf5 install -y adw-gtk3-theme podman-compose telnet
+dnf5 install -y adw-gtk3-theme podman-compose
 
 # OpenGL dev
 dnf5 install -y mesa-libGL-devel mesa-libGLU-devel libXrandr-devel libXinerama-devel libXcursor-devel libXi-devel
