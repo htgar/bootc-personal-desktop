@@ -20,7 +20,7 @@ dnf5 install -y adw-gtk3-theme podman-compose telnet
 dnf5 install -y mesa-libGL-devel mesa-libGLU-devel libXrandr-devel libXinerama-devel libXcursor-devel libXi-devel
 
 # Tesseract
-dnf5 install -y tesseract-libs tesseract-langpack-en
+dnf5 install -y tesseract-libs tesseract-langpack-eng
 ln -s /usr/lib64libtesseract.so.5.5 /usr/lib64/libtesseract.so.5
 
 # Remove apps that I don't need
