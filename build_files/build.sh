@@ -21,7 +21,7 @@ dnf5 install -y mesa-libGL-devel mesa-libGLU-devel libXrandr-devel libXinerama-d
 
 # Tesseract
 dnf5 install -y tesseract-libs tesseract-langpack-eng
-ln -s /usr/lib64libtesseract.so.5.5 /usr/lib64/libtesseract.so.5
+ln -s /usr/lib64/libtesseract.so.5.5 /usr/lib64/libtesseract.so.5
 
 # Remove apps that I don't need
 dnf5 remove -y tmux htop nvtop dconf-editor gnome-software gnome-software-rpm-ostree gnome-terminal-nautilus
